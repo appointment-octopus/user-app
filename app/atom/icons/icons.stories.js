@@ -1,20 +1,17 @@
 import React from 'react';
+import { ArrowRight, Calendar, Chat, ChevronRight, CreditCard, Globe, Home, MapPin, MoreVertical, Phone, Profile, Search, Video } from './Icons';
+import { color } from '../../theme';
+import CircleHighlight from './CircleHighlight';
 
-import * as icons from './Icons';
+export const highlightedIcon = () => {
+    return (
+        <CircleHighlight>
+            <Video style={{ stroke: color.gray.light[1] }}/>
+        </CircleHighlight>
+    );
+}
 
-export const ArrowRight = () => <icons.ArrowRight />;
-export const Calendar = () => <icons.Calendar />;
-export const Chat = () => <icons.Chat />;
-export const ChevronRight = () => <icons.ChevronRight />;
-export const CreditCard = () => <icons.CreditCard />;
-export const Globe = () => <icons.Globe />;
-export const Home = () => <icons.Home />;
-export const MapPin = () => <icons.MapPin />;
-export const MoreVertical = () => <icons.MoreVertical />;
-export const Phone = () => <icons.Phone />;
-export const Profile = () => <icons.Profile />;
-export const Search = () => <icons.Search />;
-export const Video = () => <icons.Video />;
+export { ArrowRight, Calendar, Chat, ChevronRight, CreditCard, Globe, Home, MapPin, MoreVertical, Phone, Profile, Search, Video };
 
 export default {
     title: 'Atoms/Icons',

@@ -28,3 +28,4 @@ export const color = {
         red: '#780116'
     }
 }
+

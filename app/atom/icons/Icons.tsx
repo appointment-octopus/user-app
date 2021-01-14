@@ -23,17 +23,20 @@ export function ArrowRight(props : IconProps) {
     return ( <Icons.ArrowRight {...props} /> );
 }
 export function Calendar( props: IconProps) {
-    props = {...defaultProps, ...props};
+    const iconProps = { ...defaultProps, stroke: color.gray.dark[1] }
+    props = {...iconProps, ...props};
     return <Icons.Calendar {...props} />;
 }
 export function Chat( props: IconProps) {
-    props = { ...defaultProps, ...props };
+    const iconProps = { ...defaultProps, stroke: color.gray.dark[1] }
+    props = {...iconProps, ...props};
     return <Icons.MessageCircle {...props} />;
 }
 export function ChevronRight( props: IconProps) {
     props = {...defaultProps, ...props};
     return <Icons.ChevronRight {...props} />;
 }
+
 export function CreditCard( props: IconProps) {
     const iconProps = { ...defaultProps, stroke: color.highlight.green }
     props = {...iconProps, ...props};
@@ -45,7 +48,8 @@ export function Globe( props: IconProps) {
     return <Icons.Globe {...props} />;
 }
 export function Home( props: IconProps) {
-    props = {...defaultProps, ...props};
+    const iconProps = { ...defaultProps, stroke: color.gray.dark[1] }
+    props = {...iconProps, ...props};
     return <Icons.Home {...props} />;
 }
 
@@ -68,7 +72,8 @@ export function Phone( props: IconProps) {
 }
 
 export function Profile( props: IconProps) {
-    props = {...defaultProps, ...props};
+    const iconProps = { ...defaultProps, stroke: color.gray.dark[1] }
+    props = {...iconProps, ...props};
     return <Icons.User {...props} />;
 }
 

@@ -18,6 +18,8 @@
     "**/*.stories.[tj]s?(x)",
     "**/*.test.[tj]sx",
     "App.test.tsx",
-    "App.tsx"
+    "App.tsx",
+    "babel.config.js",
+    "jest.config.js"
   ]
 }

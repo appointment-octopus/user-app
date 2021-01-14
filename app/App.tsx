@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components/native';
 import { View, Text } from 'react-native';
 import { Chat }  from './atom/icons/Icons';
-
+import Svg from './atom/Button';
 export default function App() {
     return (
         <Container>
             <Title color="palevioletred">Expo with 💅 Styled Components</Title>
             <Title color="chocolate">iOS • Android • web</Title>
             <Chat width={15} height={20} fill='red' />
+            <Svg />
         </Container>
     );
 }
