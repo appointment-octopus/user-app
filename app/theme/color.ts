@@ -1,9 +1,9 @@
-export const color = {
+let color = {
     primary: {
         dark: '#111D42',
         purple: '#423E94',
         blue: '#270B96',
-        green: '#0B963A' 
+        green: '#0B963A'
     },
     highlight: {
         green: '#96FF4E',
@@ -22,10 +22,12 @@ export const color = {
             3: '#333F66'
         }
     },
-    bg: 'linear-gradient(131.35deg, #C3CBE6 -8.86%, #C3CBE6 -8.84%, #F2F5FF 100%)',
     control: {
         green: '#0E9594',
         red: '#780116'
     }
 }
 
+color['bg'] = `linear-gradient(131.35deg, ${color.gray.light[2]} -8.86%, ${color.gray.light[2]} -8.84%, ${color.gray.light[1]} 100%)`;
+
+export default color;

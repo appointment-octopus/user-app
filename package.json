@@ -5,7 +5,12 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@expo-google-fonts/fira-sans": "^0.1.0",
+    "@expo-google-fonts/hind-madurai": "^0.1.0",
+    "@expo-google-fonts/montserrat": "^0.1.0",
+    "@expo-google-fonts/roboto": "^0.1.0",
     "expo": "~40.0.0",
+    "expo-app-loading": "^1.0.1",
     "expo-constants": "~9.3.3",
     "expo-font": "~8.4.0",
     "expo-linear-gradient": "~8.4.0",

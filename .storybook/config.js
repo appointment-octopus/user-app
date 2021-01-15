@@ -2,6 +2,7 @@ import { addParameters, configure } from "@storybook/react";
 import { create } from '@storybook/theming';
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 import './addons';
+
 const customViewports = {
     kindleFire2: {
         name: 'Kindle Fire 2',

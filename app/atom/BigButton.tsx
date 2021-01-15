@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import Button from './Button'
 
-import { color } from '../theme';
+// import { color } from '../theme';
 
 export default function BigButton({ children }) {
     return (
