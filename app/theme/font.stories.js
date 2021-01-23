@@ -30,10 +30,6 @@ function header() {
     let [fontsLoaded] = useFonts({
         HindMadurai_300Light, Montserrat_700Bold, Roboto_400Regular, FiraSans_500Medium, FiraSans_400Regular
     });
-
-    let fontSize = 24;
-    let paddingVertical = 6;
-
     if (!fontsLoaded) {
         return <AppLoading />;
     } else {

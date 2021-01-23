@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Icons from 'react-native-feather';
 import { color } from '../../theme';
+import { useWindowSize } from '../../utils';
 
 interface IconProps {
     width?: number;
@@ -8,6 +9,8 @@ interface IconProps {
     fill?: string;
     stroke?: string;
     strokeWidth?: number;
+    alignSelf?: string;
+    marginLeft?: string;
 }
 
 const defaultProps = {
@@ -19,7 +22,11 @@ const defaultProps = {
 }
 
 export function ArrowRight(props : IconProps) {
+    let [windowWidth,] = useWindowSize();
+    const ratio = windowWidth / 375
     props = { ...defaultProps, ...props };
+    props.width *= ratio
+    props.height *= ratio
     return ( <Icons.ArrowRight {...props} /> );
 }
 export function Calendar( props: IconProps) {

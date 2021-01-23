@@ -1,6 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components/native';
 import color from './color';
+import { useWindowSize } from '../utils'
+import { PixelRatio } from 'react-native'
 
 interface DefaultFontProps {
     fontFamily: string,
@@ -12,6 +14,7 @@ interface DefaultFontProps {
 interface EditableFontProps {
     textColor?: string,
     textAlign?: string,
+    textSize?: number,
     alignItems?: string
 }
 
@@ -33,13 +36,7 @@ const DefaultFont = styled.Text<DefaultFontProps & EditableFontProps>`
 `;
 DefaultFont.defaultProps = { ...defaultFontValues };
 
-let font = {
-    header: {},
-    subtitle: {},
-    body: {},
-    buttonCaps: {},
-    buttonNormal: {},
-}
+let font: any = {}
 
 // first position in sizes array being empty is intentional
 // so foreach will skip it [and the index will therefore start counting by 1
@@ -69,7 +66,7 @@ const styles = {
             fontVariant: 'small-caps',
             textTransform: 'uppercase'
         },
-        fontSizes: [, 16, 12]
+        fontSizes: [, 18.5, 17, 12]
     },
     buttonNormal: {
         defaultStyle: {
@@ -81,8 +78,16 @@ const styles = {
 
 for (let [key, typeOfFont] of Object.entries(styles)) {
     const { defaultStyle, fontSizes } = typeOfFont;
-    fontSizes.forEach( ( value, i ) => {
-        font[`${key}${i}`] = ( props: EditableFontProps ) => <DefaultFont {...props} {...defaultStyle} fontSize={value} />;
+    fontSizes.forEach( (value, i) => {
+        font[`${key}${i}`] = ( props: EditableFontProps ) => {
+            let [windowWidth,] = useWindowSize();
+            const ratio = windowWidth / 375
+            const finalValue = PixelRatio.roundToNearestPixel(ratio * value)
+            
+            return (
+                <DefaultFont {...props} {...defaultStyle} fontSize={finalValue} />
+            );
+        }
     } );
 }
 

@@ -1,9 +1,36 @@
 import React from 'react'
 import { config, withDesign } from 'storybook-addon-designs';
+import AppLoading from 'expo-app-loading';
+import { View } from 'react-native';
+import { color, font } from '../theme';
+import { useFonts } from 'expo-font'
+import { FiraSans_500Medium, FiraSans_400Regular } from '@expo-google-fonts/fira-sans';
+import { Roboto_400Regular } from '@expo-google-fonts/roboto';
+import { Montserrat_700Bold } from '@expo-google-fonts/montserrat';
+import { HindMadurai_300Light } from '@expo-google-fonts/hind-madurai';
 
 import BigButton from './BigButton';
-export { BigButton };
-BigButton.story = {
+
+function ContinueButton() {
+    let [fontsLoaded] = useFonts({
+        HindMadurai_300Light, Montserrat_700Bold, Roboto_400Regular, FiraSans_500Medium, FiraSans_400Regular
+    });
+    if (!fontsLoaded) {
+        return <AppLoading />;
+    } else {
+        return (
+            <View style={{
+                background: color['bg'], 
+                height: '100vh', width: '100vw',// position: 'fixed',
+
+            }}>
+                <BigButton />
+            </View>
+        );
+    }
+}
+export { ContinueButton };
+ContinueButton.story = {
     parameters: {
         design: config([
             {

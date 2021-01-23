@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import { View, Text } from 'react-native';
-import { Chat }  from './atom/icons/Icons';
+import { Chat }  from './atom/icons';
 import Svg from './atom/Button';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font'

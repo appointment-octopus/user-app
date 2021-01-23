@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Calendar, Chat, ChevronRight, CreditCard, Globe, Home, MapPin, MoreVertical, Phone, Profile, Search, Video } from './Icons';
+import { ArrowRight, Calendar, Chat, ChevronRight, CreditCard, Globe, Home, MapPin, MoreVertical, Phone, Profile, Search, Video } from './index';
 import { color } from '../../theme';
 import CircleHighlight from './CircleHighlight';
 

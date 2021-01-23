@@ -1,16 +1,18 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 import Button from './Button'
+import { font, color } from '../theme'
+import { ArrowRight } from './icons';
 
-// import { color } from '../theme';
-
-export default function BigButton({ children }) {
+export default function BigButton() {
+    
     return (
-        <TouchableOpacity>
-            <Button>
-                {children}
-            </Button >
-        </TouchableOpacity>
+        <Button strokeColor={color.primary.dark} backgroundColor={color.highlight.cyan}>
+            <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
+                <font.buttonCaps1 style={{ margin: 'auto' }} textColor={color.gray.light[1]}>Continuar</font.buttonCaps1>
+                <ArrowRight />
+            </View>
+        </Button>
     );
 }
 
