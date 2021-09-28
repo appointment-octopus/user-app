@@ -10,6 +10,9 @@ import { Montserrat_700Bold } from '@expo-google-fonts/montserrat';
 import { HindMadurai_300Light } from '@expo-google-fonts/hind-madurai';
 
 import BigButton from './BigButton';
+import { Home, Profile } from './icons/index';
+import CircleHighlight from './icons/CircleHighlight';
+import { Calendar } from './icons/index';
 
 function ContinueButton() {
     let [fontsLoaded] = useFonts({
@@ -31,6 +34,51 @@ function ContinueButton() {
 }
 export { ContinueButton };
 ContinueButton.story = {
+    parameters: {
+        design: config([
+            {
+                name: 'Figma',
+                type: 'figma',
+                url:
+                    'https://www.figma.com/file/jvLCps7aAuxsvHVv1j9x7D/Appointment-Octopus?node-id=47%3A6'
+            },
+            {
+                name: 'Link',
+                type: 'link',
+                url:
+                    'https://www.figma.com/file/jvLCps7aAuxsvHVv1j9x7D/Appointment-Octopus?node-id=47%3A6'
+            }
+        ])
+    }
+}
+
+function NavigationMenu() {
+    let [fontsLoaded] = useFonts({
+        HindMadurai_300Light, Montserrat_700Bold, Roboto_400Regular, FiraSans_500Medium, FiraSans_400Regular
+    });
+    if (!fontsLoaded) {
+        return <AppLoading />;
+    } else {
+        return (
+            <View style={{
+                background: '#111D42', 
+                height: '60px',  width: '100%',
+                display: 'flex',
+                justifyContent: 'space-around',
+                flexDirection: 'row',
+                alignItems: 'center',
+                position: 'fixed',
+                bottom: 0
+            }}>
+                <Home/>
+                <Profile/>
+            </View>
+        );
+    }
+}
+
+export { NavigationMenu };
+NavigationMenu.story = {
     parameters: {
         design: config([
             {
