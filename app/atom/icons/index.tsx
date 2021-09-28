@@ -94,3 +94,9 @@ export function Video( props: IconProps) {
     props = {...iconProps, ...props};
     return <Icons.Video {...props} />;
 }
+
+export function Clock( props: IconProps) {
+    const iconProps = { ...defaultProps, stroke: color.gray.light[2] }
+    props = {...iconProps, ...props};
+    return <Icons.Clock {...props} />;
+}
