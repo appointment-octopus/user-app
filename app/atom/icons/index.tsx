@@ -45,7 +45,7 @@ export function ChevronRight( props: IconProps) {
 }
 
 export function CreditCard( props: IconProps) {
-    const iconProps = { ...defaultProps, stroke: color.highlight.green }
+    const iconProps = { ...defaultProps, stroke: color.gray.dark[1] }
     props = {...iconProps, ...props};
     return (<Icons.CreditCard {...props} />);
 }
@@ -99,4 +99,16 @@ export function Clock( props: IconProps) {
     const iconProps = { ...defaultProps, stroke: color.gray.light[2] }
     props = {...iconProps, ...props};
     return <Icons.Clock {...props} />;
+}
+
+export function Circle( props: IconProps) {
+    const iconProps = { ...defaultProps, stroke: color.gray.light[2] }
+    props = {...iconProps, ...props};
+    return <Icons.Circle {...props} />;
+}
+
+export function CheckCircle( props: IconProps) {
+    const iconProps = { ...defaultProps, stroke: color.gray.light[2] }
+    props = {...iconProps, ...props};
+    return <Icons.CheckCircle {...props} />;
 }
