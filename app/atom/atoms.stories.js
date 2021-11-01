@@ -100,7 +100,7 @@ NavigationMenu.story = {
     }
 }
 
-function WeekDay() {
+function WeekDay({label, number}) {
     let [fontsLoaded] = useFonts({
         HindMadurai_300Light, Montserrat_700Bold, Roboto_400Regular, FiraSans_500Medium, FiraSans_400Regular
     });
@@ -119,8 +119,8 @@ function WeekDay() {
                 justifyContent: 'center',
                 color: '#99A2BF'
             }}>
-                <spam>seg</spam>
-                <spam>9</spam>
+                <spam>{label}</spam>
+                <spam>{number}</spam>
             </View>
         );
     }
@@ -207,11 +207,12 @@ function MonthYear() {
                 height: '25.16px',
                 color: '#423E94',
                 display: 'flex',
-                justifyContent: 'space-evenly',
                 flexDirection: 'row',
                 alignItems: 'center'        
             }}>
-                <Calendar/>
+                <Calendar style={{
+                    margin: '8px',
+                }}/>
                 <spam>Outubro, 2020</spam>
             </View>
         );

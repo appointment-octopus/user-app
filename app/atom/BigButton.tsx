@@ -4,12 +4,12 @@ import Button from './Button'
 import { font, color } from '../theme'
 import { ArrowRight } from './icons';
 
-export default function BigButton() {
+export default function BigButton({text='Continuar'}) {
     
     return (
         <Button strokeColor={color.primary.dark} backgroundColor={color.highlight.cyan}>
             <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <font.buttonCaps1 style={{ margin: 'auto' }} textColor={color.gray.light[1]}>Continuar</font.buttonCaps1>
+                <font.buttonCaps1 style={{ margin: 'auto' }} textColor={color.gray.light[1]}>{text}</font.buttonCaps1>
                 <ArrowRight />
             </View>
         </Button>

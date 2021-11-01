@@ -102,7 +102,7 @@ export function Clock( props: IconProps) {
 }
 
 export function Circle( props: IconProps) {
-    const iconProps = { ...defaultProps, stroke: color.gray.light[2] }
+    const iconProps = { ...defaultProps, stroke: color.gray.dark[3] }
     props = {...iconProps, ...props};
     return <Icons.Circle {...props} />;
 }
@@ -111,4 +111,9 @@ export function CheckCircle( props: IconProps) {
     const iconProps = { ...defaultProps, stroke: color.gray.light[2] }
     props = {...iconProps, ...props};
     return <Icons.CheckCircle {...props} />;
+}
+export function ArrowLeft( props: IconProps) {
+    const iconProps = { ...defaultProps, stroke: color.gray.dark[3] }
+    props = {...iconProps, ...props};
+    return <Icons.ArrowLeft {...props} />;
 }
