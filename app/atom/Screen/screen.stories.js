@@ -11,7 +11,7 @@ import { HindMadurai_300Light } from '@expo-google-fonts/hind-madurai';
 import { Input } from 'react-native-elements';
 import BigButton from '../BigButton';
 import { ArrowLeft } from '../icons';
-import { ContinueButton, Hour, MonthYear, WeekDay } from '../atoms.stories';
+import { ConsultCardOnline, ConsultCardPresential, ContinueButton, Hour, MonthYear, WeekDay } from '../atoms.stories';
 
 const days = [
     {
@@ -189,6 +189,93 @@ function DataAndHour() {
 }
 export { DataAndHour };
 DataAndHour.story = {
+    parameters: {
+        design: config([
+            {
+                name: 'Figma',
+                type: 'figma',
+                url:
+                    'https://www.figma.com/file/jvLCps7aAuxsvHVv1j9x7D/Appointment-Octopus?node-id=47%3A6'
+            },
+            {
+                name: 'Link',
+                type: 'link',
+                url:
+                    'https://www.figma.com/file/jvLCps7aAuxsvHVv1j9x7D/Appointment-Octopus?node-id=47%3A6'
+            }
+        ])
+    }
+}
+
+function ConsultType() {
+    let [fontsLoaded] = useFonts({
+        HindMadurai_300Light, Montserrat_700Bold, Roboto_400Regular, FiraSans_500Medium, FiraSans_400Regular
+    });
+    if (!fontsLoaded) {
+        return <AppLoading />;
+    } else {
+        return (
+            <View style={{
+                background: color['bg'], 
+                height: '100vh', width: '100vw',
+
+            }}>
+                <View style={{
+                    //padding: '15px',
+                    width:'100%', height: '100%',
+                    display: 'flex',
+                }}>
+                    <View style={{
+                        display: 'flex',
+                        padding: '15px',
+                        paddingBottom: '30px',
+                        position: 'relative', top:'0'
+                    }}>
+                        <ArrowLeft style={{
+                            width: '34px',
+                            height: '34px',
+                            marginBottom: '15px',
+                        }}/>
+
+                        <Text
+                            style={{
+                                padding: '15px',
+                                fontSize: '30px',
+                                paddingVertical: '',
+                                // Note the quoting of the value for `fontFamily` here; it expects a string!
+                                fontFamily: 'Montserrat_700Bold',
+                            }}>
+                            Escolha o tipo de consulta
+                        </Text>
+                    </View>
+
+                    <View style={{
+                        width: '100%', height: '35%',
+                        display: 'flex',
+                        marginTop: '15%',
+                        marginBottom: 'auto',
+                        justifyContent: 'space-around'
+                    }}>
+
+                        <ConsultCardOnline />
+                        <ConsultCardPresential />
+
+                    </View>
+                
+                    <View style={{
+                            position: 'absolute',
+                            bottom: '0',
+                            padding: '15px',
+                        }}>
+                            <BigButton />
+                    </View>
+                </View>
+            </View>
+        );
+    }
+}
+export { ConsultType };
+ConsultType.story = {
     parameters: {
         design: config([
             {

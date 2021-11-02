@@ -50,7 +50,7 @@ export function CreditCard( props: IconProps) {
     return (<Icons.CreditCard {...props} />);
 }
 export function Globe( props: IconProps) {
-    const iconProps = { ...defaultProps, stroke: color.primary.green }
+    const iconProps = { ...defaultProps, stroke: '#8F47AE' }
     props = {...iconProps, ...props};
     return <Icons.Globe {...props} />;
 }
@@ -61,7 +61,7 @@ export function Home( props: IconProps) {
 }
 
 export function MapPin( props: IconProps) {
-    const iconProps = { ...defaultProps, stroke: color.primary.blue }
+    const iconProps = { ...defaultProps, stroke: '#3764B3' }
     props = {...iconProps, ...props};
     return <Icons.MapPin {...props} />;
 }

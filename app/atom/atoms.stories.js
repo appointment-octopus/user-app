@@ -260,9 +260,12 @@ function SearchGlobe() {
             <Globe/>
                 <div style = {{
                     display: 'flex',
-                    justifyContent: 'flex-end'
+                    justifyContent: 'flex-end',
+                    stroke: '#8F47AE',
                 }}>
-                <Search/>
+                <Search style={{
+                    stroke: '#8F47AE'
+                }}/>
                 </div>
             </div>
                 
@@ -307,14 +310,16 @@ function SearchPin() {
                 height: '48px',
                 display: 'flex',
                 flexDirection: 'column',
-                color: '#8F47AE'
             }}>
             <MapPin/>
                 <div style = {{
                     display: 'flex',
-                    justifyContent: 'flex-end'
+                    justifyContent: 'flex-end',
+                    stroke: '#3764B3',
                 }}>
-                <Search/>
+                <Search style={{
+                    stroke: '#3764B3'
+                }}/>
                 </div>
             </div>
                 
@@ -343,7 +348,7 @@ SearchPin.story = {
     }
 }
 
-function ConsultCard() {
+function ConsultCardOnline() {
     let [fontsLoaded] = useFonts({
         HindMadurai_300Light, Montserrat_700Bold, Roboto_400Regular, FiraSans_500Medium, FiraSans_400Regular
     });
@@ -361,7 +366,8 @@ function ConsultCard() {
                 display: 'flex',
                 justifyContent: 'space-evenly',
                 alignSelf: 'center',
-                backgroundColor: '#C4C4C4'   
+                backgroundColor: '#F2F5FF',
+                stroke: 'solid',   
             }}>
                 <Circle/>
                 <div style = {{
@@ -382,8 +388,69 @@ function ConsultCard() {
     }
 }
 
-export { ConsultCard };
-ConsultCard.story = {
+export { ConsultCardOnline };
+ConsultCardOnline.story = {
+    parameters: {
+        design: config([
+            {
+                name: 'Figma',
+                type: 'figma',
+                url:
+                    'https://www.figma.com/file/jvLCps7aAuxsvHVv1j9x7D/Appointment-Octopus?node-id=47%3A6'
+            },
+            {
+                name: 'Link',
+                type: 'link',
+                url:
+                    'https://www.figma.com/file/jvLCps7aAuxsvHVv1j9x7D/Appointment-Octopus?node-id=47%3A6'
+            }
+        ])
+    }
+}
+
+function ConsultCardPresential() {
+    let [fontsLoaded] = useFonts({
+        HindMadurai_300Light, Montserrat_700Bold, Roboto_400Regular, FiraSans_500Medium, FiraSans_400Regular
+    });
+    if (!fontsLoaded) {
+        return <AppLoading />;
+    } else {
+        return (
+            <View style={{
+                width: '90%',
+                height: '80px',
+                borderRadius: '11px',
+                
+                flexDirection: 'row',
+                alignItems: 'center',
+                display: 'flex',
+                justifyContent: 'space-evenly',
+                alignSelf: 'center',
+                backgroundColor: '#F2F5FF'   
+            }}>
+                <Circle/>
+                <div style = {{
+                    width: '60%',
+                    display: 'flex',
+                    flexDirection: 'column',
+
+                }}>
+                    <h3 style = {{
+                        color: '#333F66',
+
+                    }}>Consulta presencial</h3>
+                    <spam>R$ 65,00</spam>
+                </div>
+                <SearchPin style={{
+                    stroke: '#8F47AE'
+                }}/>
+            </View>
+        );
+    }
+}
+
+export { ConsultCardPresential };
+ConsultCardPresential.story = {
     parameters: {
         design: config([
             {
